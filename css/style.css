@@ -47,7 +47,6 @@ body {
   );
 } */
 
-
 /* .card-weather .card-body:first-child {
   background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1557323760/weather.svg)
     no-repeat center;
@@ -114,3 +113,11 @@ p {
   padding: 1rem;
   text-align: center;
 } */
+
+footer {
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.5),
+    rgba(37, 117, 252, 0.5)
+  );
+}

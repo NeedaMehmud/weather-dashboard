@@ -30,7 +30,9 @@ function getWeather(cityName) {
             console.log(data)
             // add data to html
             console.log(data.main.temp + '°F')
-            $("#temp").text(data.main.temp + '°F');
+            $('#temp').text(data.main.temp + '°F');
+            $('#location').text(data.sys.country);
+            $('#date').text(data.timezone);
             data.main.humidity;
             data.wind.speed;
 
