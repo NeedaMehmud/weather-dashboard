@@ -4,7 +4,6 @@ var searchCityInput = $('#inputCity');
 let humidityElement = $(".humidity");
 let uvIndexElement = $(".uvIndex");
 let windSpeedElement = $(".windSpeed");
-let temperatureElement = $(".temp");
 
 
 searchCityBtn.on("click", function (event) {
@@ -30,7 +29,11 @@ function getWeather(cityName) {
         .then(data => {
             console.log(data)
             // add data to html
+            console.log(data.main.temp + '°F')
+            $("#temp").text(data.main.temp + '°F');
+            data.main.humidity;
+            data.wind.speed;
 
         });
-    
+
 }
