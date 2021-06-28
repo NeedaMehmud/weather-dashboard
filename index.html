@@ -13,18 +13,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <script src="jquery-3.5.1.min.js"></script>
   <link rel="stylesheet" href="css/style.css" type="text/css" />
-  <title>Work Day Scheduler</title>
+  <title>Weather Dashboard</title>
 </head>
 
-<body class="min-100-vh flex-column">
+<body class="min-80-vh">
   <header class="p-3 text-center text-white gradient-custom">
     <h1>Weather Dashboard</h1>
   </header>
   <main>
+    <div class="card-body" style="width: 18rem;">
+      <form>
+        <div class="form-group">
+          <label>Search for a City</label>
+          <input class="form-control" id="inputCity" placeholder="New York">
+        </div>
+        <button type="submit" id="searchCityButton"
+          class="btn btn-primary btn-sm btn-block submit-button">Search</button>
+        <br>
+        <button type="submit" id="clearButton" class="btn btn-primary btn-sm btn-block submit-button">Clear Search
+          History</button>
+      </form>
+
+        <span>
+          <div class="card text-center">
+            <div class="card-header">
+              Search History
+            </div>
+            <div class="card-body" id="search-history">
+
+            </div>
+          </div>
+        </span>
+
+
+
+      <!-- <div class="city-temp">
+        <div class="forecast">
+          <div class="row">
+            <h1 class="cityName">City Name</h1>
+            <h1 class="currentDate"></h1>
+            <img class="weatherIcon"></img>
+          </div>
+          <div class="row">
+            <p class="temp">Temperature:</p>
+          </div>
+          <div class="row">
+            <p class="humidity">Humidity:</p>
+          </div>
+          <div class="row">
+            <p class="windSpeed">Wind Speed:</p>
+          </div>
+          <div class="row">
+            <p class="uvIndex">UV Index:</p>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="five-day-container">
+        <h1>5-Day Forecast:</h1>
+        <div class="card-row">
+        </div>
+      </div>
+    </div>
+    </div> -->
+
+    </div>
   </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js”></script>
 <script src="js/script.js"></script>
+
 </html>
