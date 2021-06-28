@@ -20,34 +20,96 @@
   <header class="p-3 text-center text-white gradient-custom">
     <h1>Weather Dashboard</h1>
   </header>
-  <main>
-    <div class="card-body" style="width: 18rem;">
-      <form>
-        <div class="form-group">
-          <label>Search for a City</label>
-          <input class="form-control" id="inputCity" placeholder="New York">
-        </div>
-        <button type="submit" id="searchCityButton"
-          class="btn btn-primary btn-sm btn-block submit-button">Search</button>
-        <br>
-        <button type="submit" id="clearButton" class="btn btn-primary btn-sm btn-block submit-button">Clear Search
-          History</button>
-      </form>
-
-        <span>
-          <div class="card text-center">
-            <div class="card-header">
-              Search History
+  <main class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div id="search" class="card-body col-6">
+          <!-- Search City Form -->
+          <form>
+            <div class="form-group">
+              <label>Search for a City</label>
+              <input class="form-control" id="inputCity" placeholder="Begin Your Search Here">
             </div>
-            <div class="card-body" id="search-history">
+            <button type="submit" id="searchCityButton"
+              class="btn btn-primary btn-sm btn-block submit-button">Search</button>
+            <br>
+            <!-- Search History Card-->
+            <span class="border border-light">
+              <div class="card text-center">
+                <div class="card-header">
+                  Search History
+                </div>
+                <div class="card-body" id="search-history">
 
+                </div>
+              </div>
+            </span>
+            <!-- Clear Button -->
+            <button type="submit" id="clearButton" class="btn btn-primary btn-sm btn-block submit-button">Clear Search
+              History</button>
+          </form>
+        </div>
+
+        <!--weather card-->
+        <div class="col-6">
+          <div class="card card-weather col-md-auto">
+            <div class="card-body page-content page-container" id="page-content">
+              <div class="weather-date-location">
+                <h3>Friday</h3>
+                <p class="text-gray"> <span class="weather-date">25 March, 2019</span>
+                  <span class="weather-location">Sydney, Australia</span>
+                </p>
+              </div>
+              <div class="weather-data d-flex">
+                <div class="mr-auto">
+                  <h4 class="display-3">32 <span class="symbol">°</span>C</h4>
+                  <p> Cloudy </p>
+                </div>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <div class="d-flex weakly-weather">
+                <div class="weakly-weather-item">
+                  <p class="mb-0"> Sun </p> <i class="mdi mdi-weather-cloudy"></i>
+                  <p class="mb-0"> 30° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Mon </p> <i class="mdi mdi-weather-hail"></i>
+                  <p class="mb-0"> 31° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Tue </p> <i class="mdi mdi-weather-partlycloudy"></i>
+                  <p class="mb-0"> 28° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Wed </p> <i class="mdi mdi-weather-pouring"></i>
+                  <p class="mb-0"> 30° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Thu </p> <i class="mdi mdi-weather-pouring"></i>
+                  <p class="mb-0"> 29° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Fri </p> <i class="mdi mdi-weather-snowy-rainy"></i>
+                  <p class="mb-0"> 31° </p>
+                </div>
+                <div class="weakly-weather-item">
+                  <p class="mb-1"> Sat </p> <i class="mdi mdi-weather-snowy"></i>
+                  <p class="mb-0"> 32° </p>
+                </div>
+              </div>
             </div>
           </div>
-        </span>
+        </div>
+
+      </div>
+
+    </div>
 
 
 
-      <!-- <div class="city-temp">
+
+    <!-- <div class="city-temp">
         <div class="forecast">
           <div class="row">
             <h1 class="cityName">City Name</h1>
@@ -69,7 +131,7 @@
         </div>
       </div> -->
 
-      <!-- <div class="five-day-container">
+    <!-- <div class="five-day-container">
         <h1>5-Day Forecast:</h1>
         <div class="card-row">
         </div>
@@ -77,12 +139,15 @@
     </div>
     </div> -->
 
-    </div>
+
   </main>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js”></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/script.js"></script>
 
 </html>
