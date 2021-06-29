@@ -1,9 +1,7 @@
 var apiKey = 'bd7825a30dfe9f79399ab02e7685f767';
 var searchCityBtn = $('#searchCityButton');
 var searchCityInput = $('#inputCity');
-let humidityElement = $(".humidity");
-let uvIndexElement = $(".uvIndex");
-let windSpeedElement = $(".windSpeed");
+// var currentDay = moment().format("dddd, MMMM Do YYYY");
 
 
 searchCityBtn.on("click", function (event) {
@@ -22,6 +20,7 @@ searchCityBtn.on("click", function (event) {
 console.log(searchCityBtn)
 
 function getWeather(cityName) {
+    // api.openweathermap.org/data/2.5/forecast/daily?q={city name}&cnt={cnt}&appid={API key}
     let queryCityUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey + '&units=imperial';
     console.log(queryCityUrl);
     fetch(queryCityUrl)
@@ -29,13 +28,14 @@ function getWeather(cityName) {
         .then(data => {
             console.log(data)
             // add data to html
-            console.log(data.main.temp + '°F')
-            $('#temp').text(data.main.temp + '°F');
-            $('#location').text(data.sys.country);
-            $('#date').text(data.timezone);
-            data.main.humidity;
-            data.wind.speed;
+            console.log(data.main.temp);
 
+            $('#temp').text("Temperature: " + data.main.temp + '°F');
+            $('#wind').text("Wind Speed: " + data.wind.speed);
+            $('#humidity').text("Humidity: " + data.main.humidity + '%');
+            $('#location').text(data.name);
+            $('#cloudy').text(data.weather.main);
+            $('#date').append(currentDay);
         });
 
 }

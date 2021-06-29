@@ -20,16 +20,16 @@
   right: 150px;
 }
 
-/* .stretch-card > .card {
+.stretch-card > .card {
   width: 100%;
   min-width: 100%;
-} */
+}
 
 body {
   background-color: #f9f9fa;
 }
 
-/* .flex {
+.flex {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -45,7 +45,7 @@ body {
     #eff6fe,
     #f6f9ff
   );
-} */
+}
 
 /* .card-weather .card-body:first-child {
   background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1557323760/weather.svg)
@@ -53,14 +53,14 @@ body {
   background-size: cover;
 } */
 
-/* .card-weather .weather-date-location {
+.card-weather .weather-date-location {
   padding: 0 0 38px;
 }
 
-.h3,
+/* .h3,
 h3 {
-  font-size: 1.56rem;
-}
+  font-size: .56rem;
+} */
 
 .h1,
 .h2,
@@ -75,7 +75,7 @@ h4,
 h5,
 h6 {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 100;
 }
 
 .text-gray,
@@ -112,7 +112,7 @@ p {
   border-right: 1px solid #f2f2f2;
   padding: 1rem;
   text-align: center;
-} */
+}
 
 footer {
   background: linear-gradient(
