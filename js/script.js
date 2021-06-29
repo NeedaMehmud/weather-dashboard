@@ -1,11 +1,29 @@
 var apiKey = '65d1ed00266eb90ad5d1a2f983cb093f';
 var searchCityBtn = $('#searchCityButton');
 var searchCityInput = $('#inputCity');
+var clearButton = $('#clearButton');
 var currentDay = moment().format("dddd, MMMM Do YYYY");
 console.log(currentDay);
 
 var iconUrl = "https://openweathermap.org/img/wn/"
 var iconExtension = ".png";
+
+for (var i in localStorage) {
+    if (i.startsWith('city')) {
+        createSearchHistoryButton(localStorage[i])
+    }
+}
+
+// clear history by clear search history button
+clearButton.on("click", function (event) {
+    event.preventDefault();
+    for (var i in localStorage) {
+        if (i.startsWith('city')) {
+            localStorage.removeItem(i);
+            $(`#${i}`).remove();
+        }
+    }
+});
 
 searchCityBtn.on("click", function (event) {
     event.preventDefault();
@@ -14,13 +32,25 @@ searchCityBtn.on("click", function (event) {
         alert("Field can't be blank. Please enter a city!");
         return;
     }
-    $("#search-history").append(`<button type="button" class="btn btn-secondary btn-lg btn-block">${searchCity}</button>`)
+    var localStorageKey = createKeyFromCityName(searchCity);
+    localStorage.setItem(`city-${localStorageKey}`, searchCity);
+
+    createSearchHistoryButton(searchCity);
     console.log("clicked button")
     getWeather(searchCity);
 
 });
 
-console.log(searchCityBtn)
+function createSearchHistoryButton(cityName) {
+    var localStorageKey = createKeyFromCityName(cityName);
+    $("#search-history").append(`<button id=city-${localStorageKey} type="button" class="btn btn-secondary btn-lg btn-block">${cityName}</button>`)
+}
+
+// remove spaces from the city key
+function createKeyFromCityName(cityName) {
+    return cityName.replace(/\s/g, "-");
+}
+
 
 function getWeather(cityName) {
     let queryCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`;
@@ -64,12 +94,11 @@ function getWeather(cityName) {
                         $(`#day${i}`).text(day);
                         console.log(day);
                         // add data to five-day html
-                        $(`#day${i}temp`).text("Temp: " + data.daily[i].temp.day + '°F');
-                        $(`#day${i}humidity`).text("Humidity: " + data.daily[i].humidity + '%');
-                        $(`#day${i}windspeed`).text("Wind: " + data.daily[i].wind_speed + 'MPH');
+                        $(`#day${i}temp`).text("Temp: " + data.daily[i].temp.day + ' °F');
+                        $(`#day${i}humidity`).text("Humidity: " + data.daily[i].humidity + ' %');
+                        $(`#day${i}windspeed`).text("Wind: " + data.daily[i].wind_speed + ' MPH');
                         $(`#day${i}icon`).attr("src", `${iconUrl}${data.daily[i].weather[0].icon}${iconExtension}`);
                     }
                 })
-            })
-        }
-    
+        })
+}
