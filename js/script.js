@@ -2,7 +2,10 @@ var apiKey = '65d1ed00266eb90ad5d1a2f983cb093f';
 var searchCityBtn = $('#searchCityButton');
 var searchCityInput = $('#inputCity');
 var currentDay = moment().format("dddd, MMMM Do YYYY");
+console.log(currentDay);
 
+var iconUrl = "https://openweathermap.org/img/wn/"
+var iconExtension = ".png";
 
 searchCityBtn.on("click", function (event) {
     event.preventDefault();
@@ -34,7 +37,8 @@ function getWeather(cityName) {
             $('#humidity').text("Humidity: " + data.main.humidity + '%');
             $('#location').text(data.name);
             $('#cloudy').text(data.weather.main);
-            $('#date').append(currentDay);
+            $('#date').text(currentDay);
+            $('#daily-icon').attr("src", `${iconUrl}${data.weather[0].icon}${iconExtension}`);
 
             var latt = data.coord.lat;
             var long = data.coord.lon;
@@ -53,6 +57,9 @@ function getWeather(cityName) {
                         $(`#day${i}temp`).text("Temp: " + data.daily[i].temp.day + '°F');
                         $(`#day${i}humidity`).text("Humidity: " + data.daily[i].humidity + '%');
                         $(`#day${i}windspeed`).text("Wind: " + data.daily[i].wind_speed + 'MPH');
+                        $(`#day${i}icon`).attr("src", `${iconUrl}${data.daily[i].weather[0].icon}${iconExtension}`);
+
+
 
                     }
                 })

@@ -20,10 +20,10 @@
   right: 150px;
 }
 
-.stretch-card > .card {
+/* .stretch-card > .card {
   width: 100%;
   min-width: 100%;
-}
+} */
 
 body {
   background-color: #f9f9fa;
@@ -36,36 +36,21 @@ body {
 }
 
 .card-weather {
-  background: #e1ecff;
-  background-image: linear-gradient(
-    to left bottom,
-    #d6eef6,
-    #dff0fa,
-    #e7f3fc,
-    #eff6fe,
-    #f6f9ff
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 0.5),
+    rgba(37, 117, 252, 0.5)
   );
 }
 
-/* .card-weather .card-body:first-child {
-  background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1557323760/weather.svg)
-    no-repeat center;
-  background-size: cover;
-} */
+.weather-date-location {
+  font-size: 35px;
+}
 
 .card-weather .weather-date-location {
   padding: 0 0 38px;
 }
 
-/* .h3,
-h3 {
-  font-size: .56rem;
-} */
-
-.h1,
-.h2,
-.h3,
-.h4,
 .h5,
 .h6,
 h1,
@@ -78,34 +63,22 @@ h6 {
   font-weight: 100;
 }
 
-.text-gray,
-.card-subtitle,
-.new-accounts ul.chats li.chat-persons a p.joined-date {
-  color: #969696;
-}
-
 p {
   font-size: 13px;
-}
-
-.text-gray,
-.card-subtitle,
-.new-accounts ul.chats li.chat-persons a p.joined-date {
-  color: #969696;
 }
 
 .display-3 {
   font-size: 2.5rem;
 }
 
-.card-weather .card-body {
+/* .card-weather .card-body {
   background: #ffffff;
 }
 
 .card-weather .weakly-weather {
   background: #ffffff;
   overflow-x: auto;
-}
+} */
 
 .card-weather .weakly-weather .weakly-weather-item {
   flex: 0 0 14.28%;
@@ -121,3 +94,4 @@ footer {
     rgba(37, 117, 252, 0.5)
   );
 }
+

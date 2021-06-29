@@ -54,10 +54,10 @@
         <div class="col-6">
           <div class="card card-weather col-md-auto">
             <div class="card-body page-content page-container" id="page-content">
-              <div class="weather-date-location" id="location">
-                <p class="text-gray"><span class="weather-date" id="date"></span>
-                  <span class="weather-location"></span>
-                </p>
+              <div class="weather-date-location" id="location"></div>
+              <img id="daily-icon"></img>
+              <div class="text-gray">
+                <span class="weather-date" id="date"></span>
               </div>
               <div class="weather-data d-flex">
                 <div class="mr-auto">
@@ -74,43 +74,50 @@
             <div class="card-body p-0">
               <div class="d-flex weakly-weather">
                 <div class="weakly-weather-item">
-                  <p class="mb-0" id="day1"> </p> <i class="mdi mdi-weather-cloudy"></i>
+                  <p class="mb-0" id="day1"></p>
+                  <img id="day1icon"></img>
                   <p class="mb-0" id="day1temp"></p>
                   <p class="mb-0" id="day1humidity"></p>
                   <p class="mb-0" id="day1windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day2"> </p> <i class="mdi mdi-weather-hail"></i>
+                  <p class="mb-1" id="day2"></p>
+                  <img id="day2icon"></img>
                   <p class="mb-0" id="day2temp"></p>
                   <p class="mb-0" id="day2humidity"></p>
                   <p class="mb-0" id="day2windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day3"> </p> <i class="mdi mdi-weather-partlycloudy"></i>
+                  <p class="mb-1" id="day3"></p>
+                  <img id="day3icon"></img>
                   <p class="mb-0" id="day3temp"></p>
                   <p class="mb-0" id="day3humidity"></p>
                   <p class="mb-0" id="day3windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day4"> </p> <i class="mdi mdi-weather-pouring"></i>
+                  <p class="mb-1" id="day4"></p>
+                  <img id="day4icon"></img>
                   <p class="mb-0" id="day4temp"></p>
                   <p class="mb-0" id="day4humidity"></p>
                   <p class="mb-0" id="day4windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day5"> </p> <i class="mdi mdi-weather-pouring"></i>
+                  <p class="mb-1" id="day5"> </p>
+                  <img id="day5icon"></img>
                   <p class="mb-0" id="day5temp"></p>
                   <p class="mb-0" id="day5humidity"></p>
                   <p class="mb-0" id="day5windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day6"> </p> <i class="mdi mdi-weather-snowy-rainy"></i>
+                  <p class="mb-1" id="day6"></p>
+                  <img id="day6icon"></img>
                   <p class="mb-0" id="day6temp"></p>
                   <p class="mb-0" id="day6humidity"></p>
                   <p class="mb-0" id="day6windspeed"></p>
                 </div>
                 <div class="weakly-weather-item">
-                  <p class="mb-1" id="day7"> </p> <i class="mdi mdi-weather-snowy"></i>
+                  <p class="mb-1" id="day7"></p>
+                  <img id="day7icon"></img>
                   <p class="mb-0" id="day7temp"></p>
                   <p class="mb-0" id="day7humidity"></p>
                   <p class="mb-0" id="day7windspeed"></p>
@@ -119,9 +126,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </main>
   <footer>
