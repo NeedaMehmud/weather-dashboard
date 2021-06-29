@@ -48,6 +48,16 @@ function getWeather(cityName) {
             fetch(fiveDayUrl)
                 .then(response => response.json())
                 .then(data => {
+                    var currentUvi = data.current.uvi;
+                    $('#current-uvi').text("UV Index: " + currentUvi);
+                    if (currentUvi <= 4) {
+                        $('#current-uvi').attr("class", "uvIndexLow")
+                    } else if (currentUvi <= 8) {
+                        $('#current-uvi').attr("class", "uvIndexMid")
+                    } else {
+                        $('#current-uvi').attr("class", "uvIndexHigh")
+                    }
+
                     for (var i = 1; i < data.daily.length; i++) {
                         var momentDate = moment.unix(data.daily[i].dt);
                         var day = momentDate.format('ddd');
@@ -58,12 +68,8 @@ function getWeather(cityName) {
                         $(`#day${i}humidity`).text("Humidity: " + data.daily[i].humidity + '%');
                         $(`#day${i}windspeed`).text("Wind: " + data.daily[i].wind_speed + 'MPH');
                         $(`#day${i}icon`).attr("src", `${iconUrl}${data.daily[i].weather[0].icon}${iconExtension}`);
-
-
-
                     }
                 })
-
-        });
-
-}
+            })
+        }
+    
