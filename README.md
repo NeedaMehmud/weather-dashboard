@@ -1,4 +1,4 @@
-# Weather-Dashboard
+## Weather-Dashboard
 A weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
 ## User Story
@@ -28,5 +28,6 @@ THEN I am again presented with current and future conditions for that city
 ## Screenshot
 
 The following image shows the web application's appearance and functionality:
+![image](weatherDashboard.png)
 
 
